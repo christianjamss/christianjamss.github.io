@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1e1e1e;
+    height: 80px; /* Set a fixed height for the header */
+}
+
+.logo img {
+    height: 100%; /* Make the logo fit the header height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    color: #ffffff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+h2, h3 {
+    color: #ffffff;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-text {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+}
+
+.about-text h2 {
+    margin-bottom: 20px; /* Adjust the value as needed */
+    font-size: 2.5em; 
+    font-family: SF Pro Display, sans-serif;
+    text-align: left;
+}
+
+.about-text p {
+    margin-top: 10px; /* Optional: add some space above the paragraph */
+    font-weight:500;
+    text-align: left;
+}
+
+#projects h2{
+    margin-bottom: 15px;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter_18pt-Regular.ttf') format('truetype'); /* Use relative paths */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('fonts/SF-Pro-Display-Heavy.ttf') format('truetype'); /* Use relative paths */
+    font-weight: normal; /* Change to 'bold' if this font style is bold */
+    font-style: normal;
+}
