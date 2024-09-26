@@ -17,12 +17,13 @@ header {
     justify-content: space-between;
     padding: 20px;
     background-color: #1e1e1e;
-    height: 80px; /* Set a fixed height for the header */
+    height: auto; /* Remove fixed height for flexibility */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .logo img {
-    height: 100%; /* Make the logo fit the header height */
-    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Adjust to maintain aspect ratio */
+    width: 100px; /* Set a max width for the logo */
 }
 
 h1 {
@@ -57,6 +58,7 @@ h2, h3 {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .about-content {
@@ -119,24 +121,89 @@ footer {
 
 .about-text p {
     margin-top: 10px; /* Optional: add some space above the paragraph */
-    font-weight:500;
+    font-weight: 500;
     text-align: left;
 }
 
-#projects h2{
+#projects h2 {
     margin-bottom: 15px;
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and navigation */
+        align-items: center; /* Center items */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        align-items: center; /* Center navigation items */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Vertical spacing for navigation */
+    }
+
+    .about-section {
+        flex-direction: column; /* Stack about text and image */
+        text-align: center; /* Center text */
+    }
+
+    .about-image {
+        text-align: center; /* Center image */
+        margin-top: 20px; /* Space above image */
+    }
+
+    .about-image img {
+        width: 100%; /* Make image responsive */
+        max-width: 300px; /* Set a max width for the image */
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .about-text h2 {
+        font-size: 2em; /* Reduce font size for headings */
+    }
+
+    .about-text p {
+        font-size: 1em; /* Reduce font size for paragraphs */
+    }
+
+    footer {
+        padding: 15px; /* Adjust footer padding */
+    }
+}
+
+/* Font Face Definitions */
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter_18pt-Regular.ttf') format('truetype'); /* Use relative paths */
+    src: url('fonts/Inter_18pt-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('fonts/SF-Pro-Display-Heavy.ttf') format('truetype'); /* Use relative paths */
+    src: url('fonts/SF-Pro-Display-Heavy.ttf') format('truetype');
     font-weight: normal; /* Change to 'bold' if this font style is bold */
     font-style: normal;
+}
+
+.logo img {
+    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Use a percentage for responsiveness */
+    max-width: 150px; /* Limit the max size */
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-bottom: -10px;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Smaller width for mobile */
+        margin-left: 20px; /* Adjust margin for smaller screens */
+    }
 }
