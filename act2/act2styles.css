@@ -1,0 +1,187 @@
+.custom-navbar {
+    background-color: #edffed;
+}
+
+.navbar {
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    font-size: 20px;
+    color: #245501;
+}
+
+.navbar-brand img {
+    margin-left: 50px;
+}
+
+.navbar-nav{
+    margin-left: 0px;
+}
+
+.navbar-nav .nav-link {
+    color: #245501; 
+    transition: transform 0.3s ease-in-out;
+    margin-left: 15px; 
+}
+
+.navbar-nav .nav-link:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-btn {
+    width: 20px; 
+    margin-left: 15px; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-btn:hover{
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-grp{
+    margin-right:50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+html, body {
+    overflow: auto; 
+}
+html, body {
+    height: auto;
+    min-height: 100%; 
+}
+
+.carousel-container {
+    width: 50%; 
+    max-width: 800px; 
+    margin: auto; 
+}
+
+.custom-carousel-img {
+    border-radius: 20px; 
+    height: auto; 
+    width: 100%; 
+    object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 80%; 
+    }
+}
+
+.carousel-item {
+    border-radius: 20px; 
+    overflow: hidden;
+}
+
+.carousel-inner {
+    border-radius: 20px;
+}
+
+.about-section img{
+    width: 300px;
+    margin-top: 80px;
+}
+
+@media (max-width: 1000px) {
+    .background {
+        margin-top: 80px;
+    }
+}
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url('../fonts/DMSans_24pt-ExtraBold.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DM Sans Reg';
+    src: url('../fonts/DMSans-Regular.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Rounded MT';
+    src: url('../fonts/ARIALROUNDEDMT.TTF') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial Rounded MT Bold';
+    src: url('../fonts/arlrdbd.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+.about-ek{
+    max-width: 50%;
+    margin: 20px auto;
+    text-align: justify;
+    margin-top: 50px;
+    font-family: DM Sans;
+    color: #245501;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #edffed;
+    color:#245501;
+    margin-top: 50px;
+    font-family: DM Sans;
+    font-size: 13px;
+    margin-left: 0px;
+}
+
+.h1{
+    text-align:center;
+    color:#245501;
+}
+
+.content-header{
+    margin-top: 130px;
+    text-align: center;
+    font-family: "DM Sans Reg";
+    font-size: 20px;
+    color: #245501;
+    max-width: 50%;
+    margin: 20px auto;
+    margin-top: 150px;
+    line-height: 20px;
+}
+
+.desc{
+    font-size:18px;
+}
+
+.rides{
+    font-family: "Arial Rounded MT Bold";
+}
+
+.card-title{
+    font-family: "Arial Rounded MT Bold";
+}
+
+.card-text{
+    font-family: 'DM Sans Reg';
+    font-size: 15px;
+}
+
+.card{
+    transition: transform 0.3s ease-in-out;
+    color: #245501;
+}
+.card:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+    background-color: #edffed;
+}
+
+.unclickable {
+    pointer-events: none; 
+}
