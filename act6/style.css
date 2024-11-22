@@ -1,0 +1,35 @@
+/*PUT YOUR CUSTOM STYLE HERE*/
+
+/*!This style is important, do not override!*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #080614;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#watch {
+    text-decoration: none;  /* Optional: Remove underline from link */
+    color: white;           /* Text color */
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+  
+#watch:hover {
+    transform: scale(1.1);    /* Slightly enlarge the button */
+}
+

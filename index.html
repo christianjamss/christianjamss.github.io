@@ -1,92 +1,602 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>james | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>christian james | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: 'Inter Medium';
+            src: url('fonts/Inter_18pt-Medium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Inter Bold';
+            src: url('fonts/Inter_18pt-Bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .navbar-nav .nav-link {
+            color: #1d1d1d;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #1d1d1d;
+            font-family: Inter Bold;
+            text-decoration: underline;
+        }
+
+        .navbar {
+            background-color: #f8f7f300 !important;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f7f3;
+            box-sizing: border-box;
+        }
+
+        .about-me-h1 {
+            font-size: 150px;
+            letter-spacing: -10px;
+        }
+
+        .about-me-p {
+            font-size: 20px;
+            line-height: 1.2;
+
+        }
+
+        .interest-h1 {
+            font-size: 40px;
+        }
+
+        .projects-h1 {
+            font-size: 150px;
+            letter-spacing: -10px;
+            color: #1d1d1d;
+            margin-bottom: 50px;
+        }
+
+
+        .interests-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .interest {
+            background-color: transparent;
+            border: 2px solid #f8f7f3;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #f8f7f3;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-family: Inter;
+        }
+
+        .interest:hover {
+            background-color: #f8f7f3;
+            color: #000;
+        }
+
+        .img-brand {
+            margin-top: 0px;
+        }
+
+        @media (max-width: 767px) {
+            .custom-pic {
+                margin-left: 0;
+            }
+
+            .about-me-h1 {
+                font-size: 50px;
+                letter-spacing: -4px;
+                text-align: center;
+            }
+
+            .about-me-p {
+                font-size: 15px;
+
+            }
+
+            .interest-h1 {
+                font-size: 20px;
+            }
+
+            .interest {
+                font-size: 12px;
+            }
+
+            .img-brand {
+                margin-top: -50px;
+            }
+
+            .projects-h1 {
+                font-size: 50px;
+                letter-spacing: -4px;
+                text-align: center;
+            }
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background-color: #e9e8e3;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            font-family: Inter, sans-serif;
+            color: #1d1d1d;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #projects h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .socials {
+            transition: transform 0.3s;
+        }
+
+        .socials:hover {
+            transform: scale(1.05);
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #f8f7f3;
+            font-family: Inter;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="pics/logo.png" alt="Your Name Logo">
-        </div>
-        <h1></h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="about" class="about-section">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Hello! I'm Christian James</h2>
-                <p>I am currently studying at the Polytechnic University of the Philippines - Sto. Tomas Campus,
-                    pursuing a Bachelor of Science in Information Technology. With a passion for technology and graphic
-                    design, I am eager to expand my knowledge and skills in this dynamic field. This website is designed
-                    to showcase the projects I'm working on in my current Web Development course. Follow my journey as I
-                    enhance this site over time— stay tuned for updates! Below, you'll find a list of my projects from
-                    the course. </p>
+    <!-- NAVBAR -->
 
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"
+        style="border: 3px solid rgba(94, 76, 76, 0); position: relative; padding: 10px; background-color: #f8f7f3;">
+        <div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, 0.452);padding: 10px;">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Logo" width="auto" height="60" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"
+                style="font-family: Inter Medium; margin-right: 20px; font-size: 25px;letter-spacing: -1px;">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav1" href="#home">home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav1" href="#about-me">about me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav1" href="#projects">projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav1" href="#socials">socials</a>
+                    </li>
+                </ul>
             </div>
-            <div class="about-image">
-                <img src="pics/pic.png" alt="Your Name">
+        </div>
+    </nav>
+
+    <!-- HOME -->
+
+    <section id="home">
+        <div class="container-fluid my-5"
+            style="margin: 0; padding-left: 70px; padding-right: 70px;   background-color: #f8f7f3">
+            <div class="row no-gutters" style="margin: 0;">
+
+                <!-- Left Column -->
+
+                <div class="img-brand col-12 col-md-6 pt-5 mb-5 d-flex justify-content-center align-items-center"
+                    style="padding: 0;  padding-left: 30px; padding-right: 30px;">
+                    <div class="mx-auto d-flex justify-content-center"
+                        style="width:40vw; min-width: 250px; height: auto; padding: 0; margin: 0;">
+                        <img src="img/brand.png" alt="pic" class="img-fluid" style="margin: 0;">
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center"
+                    style="padding: 0;  padding-left: 30px; padding-right: 30px;">
+                    <div class="mx-auto d-flex justify-content-center custom-pic"
+                        style="width:30vw; min-width: 350px; height: auto; padding: 0; margin: 0;">
+                        <img src="img/pic.png" alt="pic" class="img-fluid"
+                            style="border-radius: 30px; border: 1px solid #0000006e; margin: 0;">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
+    <!-- ABOUT ME -->
+
+    <section id="about-me">
+        <div class="container-fluid" style="background-color: #1d1d1d; padding: 70px; margin: 0;">
+            <h1 class="about-me-h1" style="color: #f8f7f3;  font-family: Inter Bold; ">
+                about me
+            </h1>
+            <p class="about-me-p" style="color: #f8f7f3;  font-family: Inter; text-align: justify">
+                hello! i am christian james, currently studying at the polytechnic university of the philippines - sto.
+                tomas campus, pursuing a bachelor of science in information technology. with a passion for technology
+                and
+                graphic design, i am eager to expand my knowledge and skills in this dynamic field. this website is
+                designed
+                to showcase the projects i'm working on in my current web development course. follow my journey as i
+                enhance
+                this site over time— stay tuned for updates! below, you'll find a list of my projects from the course.
+            </p>
+            <h1 class="interest-h1"
+                style="font-family: Inter Bold; color: #f8f7f3; text-align: center; margin-top: 55px;">
+                interests and hobbies
+            </h1>
+            <div class="interests-container" style="margin-top: -15px;">
+                <div class="interest">i &lt;3 watching films & series </div>
+                <div class="interest">.. and listening to *real* music</div>
+                <div class="interest">graphic designing</div>
+                <div class="interest">coding (well.. kinda)</div>
+                <div class="interest">i like.. or ok maybe love kpop :D</div>
+                <div class="interest">talks about ariana grande 24/7</div>
+                <div class="interest">also dyk grentperez? &gt;&lt;</div>
+                <div class="interest">brat brat brat brat brat!!!</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
 
     <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project">
-                <a href="act1.html">
-                    <img src="pics/project1.png" alt="Project 1">
-                    <h3>Activity 1 : Baseus Feature</h3>
-                </a>
-                <p>Create a one-page HTML about any specific hardware device you want to showcase, like a gaming
-                    console, mobile phone, laptop, PC, monitor, TV, etc.
-                </p>
+        <div class="container-fluid"
+            style="background-color: #f8f7f3; margin: 0; padding: 0px; justify-content: center; ">
+            <div class="px-5" style="padding-top: 70px; padding-bottom: 70px;">
+                <h1 class="projects-h1" style="font-family: Inter Bold; ">
+                    projects
+                </h1>
+                <div class="project-grid" style="margin-bottom: 20px;">
+                    <div class="project">
+                        <a href="act1/act1.html">
+                            <img src="img/act1.png" alt="Project 1">
+                            <h3>Activity 1 : Baseus Feature</h3>
+                        </a>
+                        <p>Create a one-page HTML about any specific hardware device you want to showcase, like a gaming
+                            console, mobile phone, laptop, PC, monitor, TV, etc.
+                        </p>
+                    </div>
+                    <div class="project">
+                        <a href="act2/index.html">
+                            <img src="img/act2.png" alt="Project 2">
+                            <h3>Activity 2: Enchanted Kingdom</h3>
+                        </a>
+                        <p>Create an HTML website about a place in the world you would like to showcase.
+                            This may be one or multi-paged.</p>
+                    </div>
+                    <div class="project">
+                        <a href="act3/index.html">
+                            <img src="img/act3.jpg" alt="Project 3">
+                            <h3>Activity 3: Ariana Grande Eras</h3>
+                        </a>
+                        <p>Create an HTML website that contains some form of gallery. It can be about anything.</p>
+                    </div>
+                    <div class="project">
+                        <a href="act4/index.html">
+                            <img src="img/act4.png" alt="Project 4">
+                            <h3>Activity 4: aespa</h3>
+                        </a>
+                        <p>Create an HTML website that utilizes a free public API with JSON return. It can be about
+                            anything. It can have one or more pages.</p>
+                    </div>
+                    <div class="project">
+                        <a href="act5/index.html">
+                            <img src="img/act5.png" alt="Project 4">
+                            <h3>Activity 5: Short n' Sweet</h3>
+                        </a>
+                        <p>Create a new page with a video feature. This can be local or from the internet. Populate the
+                            page with relevant information. You can add as many videos as you want. You may apply other
+                            media as well.
+                        </p>
+                    </div>
+                    <div class="project">
+                        <a href="act6/index.html">
+                            <img src="img/act6.png" alt="Project 4">
+                            <h3>Activity 6: Drama</h3>
+                        </a>
+                        <p>Create an HTML site that implements the parallax design. The site can be about anything that
+                            you like to showcase. It can be a personal site, a game you enjoy, a gadget you love, or
+                            anything else.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="project">
-                <a href="act2/index.html">
-                    <img src="act2/pics/bg.png" alt="Project 2">
-                    <h3>Activity 2: Enchanted Kingdom</h3>
-                    <p>Create an HTML website about a place in the world you would like to showcase.
-                        This may be one or multi-paged.</p>
-                </a>
-            </div>
-            <div class="project">
-                <a href="act3/index.html">
-                    <img src="act3/img/project3.png" alt="Project 3">
-                    <h3>Activity 3: Ariana Grande Eras</h3>
-                    <p>Create an HTML website that contains some form of gallery. It can be about anything.</p>
-                </a>
-            </div>
-            <div class="project">
-                <a href="act4/index.html">
-                    <img src="act4/img/project4.png" alt="Project 4">
-                    <h3>Activity 4: aespa</h3>
-                    <p>Create an HTML website that utilizes a free public API with JSON return. It can be about anything. It can have one or more pages.</p>
-                </a>
-            </div>
+
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: cj29070@gmail.com</p>
-        <p>@christianjamss on Instagram</p>
+    <!-- SOCIALS -->
+
+    <section id="socials">
+        <div class="container-fluid" style="background-color: #1d1d1d; padding: 70px;">
+            <h1 class="about-me-h1" style="color: #f8f7f3;  font-family: Inter Bold; ">
+                socials
+            </h1>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 g-3 py-5 justify-content-center">
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://www.facebook.com/christianjamss"
+                            style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/fb.png" alt="facebook"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">facebook
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @christianjamss</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://www.instagram.com/christianjamss"
+                            style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/ig.png" alt="instagram"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">instagram
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @christianjamss</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://www.instagram.com/min9tbz" style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/ig.png" alt="instagram"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">instagram
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @min9tbz</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://x.com/chrstianjames" style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/twitter.png" alt="twt"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">twitter
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @chrstianjames</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://ph.pinterest.com/min9tbz/" style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/pinterest.png" alt="pin"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">pinterest
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @min9tbz</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://letterboxd.com/chrstnjames/" style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/letterboxd.png" alt="letterboxd"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">
+                                            letterboxd</h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @chrstnjames</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://www.last.fm/user/christianjamss"
+                            style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/lastfm.png" alt="letterboxd"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">lastfm
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @christianjamss</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://marathontv.app/nayeon" style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/marathon.png" alt="marathon"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">marathon
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @nayeon</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://open.spotify.com/user/22smld2cvb4bkggogqj34h4hi?si=943a3953947449dd"
+                            style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/spotify.png" alt="spotify"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">spotify
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">james
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="socials col d-flex justify-content-center my-2">
+                        <a href="https://www.tiktok.com/@0916j4_mess" style="text-decoration: none; color: inherit;">
+                            <div class="card"
+                                style="width: 200px; background-color: transparent; border: 1px solid #f8f7f3;">
+                                <div
+                                    class="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/tiktok.png" alt="spotify"
+                                            style="width: 30px; height: 30px; margin-right: 10px;">
+                                        <h5 class="card-title"
+                                            style="font-family: Inter, sans-serif; color: #f8f7f3; margin: 0;">tiktok
+                                        </h5>
+                                    </div>
+                                    <p class="card-text"
+                                        style="font-family: Inter, sans-serif; color: #f8f7f3; margin-top: -15px;">
+                                        @0916j4_mess</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 james. Web Development Portfolio.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
