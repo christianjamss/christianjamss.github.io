@@ -172,6 +172,12 @@
             margin-top: 15px;
         }
 
+        body{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100vh;
+        }
+
         .socials {
             transition: transform 0.3s;
         }
@@ -187,6 +193,13 @@
             background-color: #1e1e1e;
             color: #f8f7f3;
             font-family: Inter;
+        }
+
+        .folder{
+            transition: transform 0.3s;
+        }
+        .folder:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -302,60 +315,18 @@
                 <h1 class="projects-h1" style="font-family: Inter Bold; ">
                     projects
                 </h1>
-                <div class="project-grid" style="margin-bottom: 20px;">
-                    <div class="project">
-                        <a href="act1/act1.html">
-                            <img src="img/act1.png" alt="Project 1">
-                            <h3>Activity 1 : Baseus Feature</h3>
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <a class="col-12 col-md-auto d-flex justify-content-center folder" href="projects/webdev.html">
+                            <img src="img/webdev icon.png" class="img-fluid mx-4 " style="width: 300px; height: auto;">
                         </a>
-                        <p>Create a one-page HTML about any specific hardware device you want to showcase, like a gaming
-                            console, mobile phone, laptop, PC, monitor, TV, etc.
-                        </p>
-                    </div>
-                    <div class="project">
-                        <a href="act2/index.html">
-                            <img src="img/act2.png" alt="Project 2">
-                            <h3>Activity 2: Enchanted Kingdom</h3>
+                        <a class="col-12 col-md-auto d-flex justify-content-center folder" href="projects/appdev.html">
+                            <img src="img/appdev icon.png" class="img-fluid mx-4" style="width: 300px; height: auto;">
                         </a>
-                        <p>Create an HTML website about a place in the world you would like to showcase.
-                            This may be one or multi-paged.</p>
-                    </div>
-                    <div class="project">
-                        <a href="act3/index.html">
-                            <img src="img/act3.jpg" alt="Project 3">
-                            <h3>Activity 3: Ariana Grande Eras</h3>
-                        </a>
-                        <p>Create an HTML website that contains some form of gallery. It can be about anything.</p>
-                    </div>
-                    <div class="project">
-                        <a href="act4/index.html">
-                            <img src="img/act4.png" alt="Project 4">
-                            <h3>Activity 4: aespa</h3>
-                        </a>
-                        <p>Create an HTML website that utilizes a free public API with JSON return. It can be about
-                            anything. It can have one or more pages.</p>
-                    </div>
-                    <div class="project">
-                        <a href="act5/index.html">
-                            <img src="img/act5.png" alt="Project 4">
-                            <h3>Activity 5: Short n' Sweet</h3>
-                        </a>
-                        <p>Create a new page with a video feature. This can be local or from the internet. Populate the
-                            page with relevant information. You can add as many videos as you want. You may apply other
-                            media as well.
-                        </p>
-                    </div>
-                    <div class="project">
-                        <a href="act6/index.html">
-                            <img src="img/act6.png" alt="Project 4">
-                            <h3>Activity 6: Drama</h3>
-                        </a>
-                        <p>Create an HTML site that implements the parallax design. The site can be about anything that
-                            you like to showcase. It can be a personal site, a game you enjoy, a gadget you love, or
-                            anything else.
-                        </p>
                     </div>
                 </div>
+
+
             </div>
 
         </div>
