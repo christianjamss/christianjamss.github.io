@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Merch Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <style>
+        body {
+            background-color: #efefef;
+        }
+
+        .custom-button {
+            width: fit-content;
+            border-radius: 100px;
+            border: 1px solid rgb(95, 95, 95);
+        }
+
+        .custom-button.content {
+            width: 200px;
+        }
+
+
+        .custom-button:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        .artist-card:hover {
+            background-color: #efefef !important;
+            cursor: pointer;
+        }
+
+
+        .artists {
+            width: fit-content;
+        }
+
+        .topcontainer {
+            height: 15dvh;
+            background-color: #818e9d;
+            border: 1px solid rgb(95, 95, 95);
+            overflow-y: hidden !important;
+            border-radius: 105px;
+        }
+
+        .maincontainer {
+            height: 58dvh;
+        }
+
+        .topcontainer::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        .form-control {
+            font-family: 'Inter Medium', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .form-control::placeholder {
+            font-family: 'Inter Medium', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(95, 95, 95);
+            border-radius: 5px;
+            transition: background-color 0.9s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(95, 95, 95);
+        }
+
+        @media (max-width: 768px) {
+            .search-box {
+                width: 250px !important;
+            }
+
+            .form-control {
+                width: 250px !important;
+            }
+
+            .logo-col {
+                margin: auto;
+            }
+
+            .products-card {
+                display: flex;
+                justify-content: center !important;
+            }
+
+            .topcontainer {
+                height: 15dvh;
+            }
+
+            .receipt-card {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row pt-3">
+            <div class="col-12 col-md-9">
+
+                <!-- FOR LOGO AND SEARCH -->
+                <div class="row">
+                    <!-- LOGO COLUMN -->
+                    <div class="logo-col col-auto">
+                        <img src="images/merch-shop-logo.png" alt="Logo"
+                            style="width: 200px; height: auto; padding: 20px;">
+                    </div>
+                    <!-- SEARCH COLUMN -->
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="search-box input-group mb-3"
+                            style="width: 500px; border: 1px solid rgb(95, 95, 95); border-radius: 5px; background-color: white;">
+                            <span class="input-group-text mx-2" id="basic-addon1"
+                                style="background-color: transparent; border: none;">
+                                <i class="bi bi-search"></i>
+                                <input type="text" class="form-control" placeholder="Search across all artists"
+                                    aria-label="search" aria-describedby="basic-addon1"
+                                    style="background-color: transparent; border: none; width: 450px;">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- FOR ARTISTS -->
+                <div class="row">
+                    <div class="col pb-3">
+                        <div class="card overflow-scroll p-3 topcontainer">
+                            <div class="d-flex flex-start flex-row artists my-auto" id="artists">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOR PRODUCTS -->
+                <div class="row">
+                    <div class="col">
+                        <div class="card overflow-scroll p-3 maincontainer">
+                            <div class="products-card px-2 d-flex flex-row flex-wrap justify-content-start m-0 m-auto"
+                                id="maincontainer">
+                                <div class="text-muted w-100 text-center mt-5"
+                                    style=" font-family: 'Inter Medium', sans-serif; letter-spacing: -0.5px;">
+                                    <p style="font-size: 18px;">Select an artist to start shopping from their
+                                        merchandise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOR RECEIPT -->
+            <div class="receipt-card col-12 col-md-3">
+                <div class="card p-3 overflow-scroll"
+                    style="height: 100%; background-color:#818e9d; border: 1px solid rgb(95, 95, 95); color:white; overflow-x: hidden !important; font-family: Inter Medium; ">
+                    <div class="text-center"
+                        style="border-bottom: 1px dashed rgb(255, 255, 255); border-top: 1px dashed rgb(255, 255, 255);">
+                        <p class="mt-3" style="font-size: 25px;">
+                            <strong>
+                                ORDER SUMMARY
+                            </strong>
+                        <p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between"
+                        style="border-bottom: 1px dashed rgb(255, 255, 255); height: 25px;">
+                        <p>
+                            ITEM
+                        </p>
+                        <p>
+                            PRICE
+                        </p>
+                    </div>
+                    <div id="receipt"
+                        style="max-height: 332px; overflow: scroll; overflow-x: hidden !important; margin-right: -10px;">
+
+                    </div>
+                    <div class="mt-4 py-4 rounded-4 px-2 text-center"
+                        style="background-color: #afb8c1; border: 1px dashed rgb(255, 255, 255);">
+                        <div>GRAND TOTAL</div>
+                        <div style="font-size: 30px; margin-top: -5px;">₱<b id="totalValue">0</b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var products = [
+            {
+                "artist": "Ariana Grande",
+                "logo": "ag-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "brighter days inc. cap",
+                        "code": "AG-BDI-CAP",
+                        "price": 1900,
+                        "image": "ag-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "934-33-erase t-shirt",
+                        "code": "AG-ERASE-SHRT",
+                        "price": 1900,
+                        "image": "ag-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "tbim crewneck",
+                        "code": "AG-TBIM-CRWNCK",
+                        "price": 3800,
+                        "image": "ag-3.png"
+                    }, {
+                        "isAvailable": true,
+                        "name": "brighter days memories crewneck",
+                        "code": "AG-BDM-CRWNCK",
+                        "price": 4100,
+                        "image": "ag-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "eternal sunshine artboard poster",
+                        "code": "AG-ES-PSTR",
+                        "price": 830,
+                        "image": "ag-5.png"
+                    }, {
+                        "isAvailable": true,
+                        "name": "tbim two sided tote",
+                        "code": "AG-TBIM-TOTE",
+                        "price": 1380,
+                        "image": "ag-6.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "we can't be friends cassette",
+                        "code": "AG-WCBF-CST",
+                        "price": 380,
+                        "image": "ag-7.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "eternal sunshine lp",
+                        "code": "AG-ES-LP",
+                        "price": 1800,
+                        "image": "ag-8.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "yours truly all my love notebook",
+                        "code": "AG-YT-NB",
+                        "price": 1300,
+                        "image": "ag-9.png"
+                    }, {
+                        "isAvailable": true,
+                        "name": "eternal sunshine cropped t-shirt",
+                        "code": "AG-ES-CRSHRT",
+                        "price": 2500,
+                        "image": "ag-10.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "brighter days cropped t-shirt",
+                        "code": "AG-BD-CRSHRT",
+                        "price": 2500,
+                        "image": "ag-11.png"
+                    }, {
+                        "isAvailable": true,
+                        "name": "yes, and? white socks",
+                        "code": "AG-YA-WSCKS",
+                        "price": 1380,
+                        "image": "ag-12.png"
+                    }
+                ]
+            },
+            {
+                "artist": "Sabrina Carpenter",
+                "logo": "sc-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "red lingerie tee",
+                        "code": "SC-RL-TEE",
+                        "price": 2700,
+                        "image": "sc-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "short n' sweet deluxe cd",
+                        "code": "SC-SNSD-CD",
+                        "price": 1000,
+                        "image": "sc-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "busy woman cap",
+                        "code": "SC-BW-CAP",
+                        "price": 1900,
+                        "image": "sc-3.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "short n' sweet alternate cover cd",
+                        "code": "SC-SNS-ACD",
+                        "price": 700,
+                        "image": "sc-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "short n' sweet deluxe 2lp",
+                        "code": "SC-SNSD-2LP",
+                        "price": 2500,
+                        "image": "sc-5.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "h<3rny hoodie",
+                        "code": "SC-HRNY-HDIE",
+                        "price": 4700,
+                        "image": "sc-6.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "ppp remix crew",
+                        "code": "SC-PPP-CRW",
+                        "price": 3600,
+                        "image": "sc-7.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "short n' sweet tights",
+                        "code": "SC-SNS-TGHTS",
+                        "price": 1900,
+                        "image": "sc-8.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "short n' sweet playing cards",
+                        "code": "SC-SNS-PLYNGCRD",
+                        "price": 800,
+                        "image": "sc-9.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "got you blocked cropped tee",
+                        "code": "SC-GYB-CRTEE",
+                        "price": 2500,
+                        "image": "sc-10.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "got you blocked tee",
+                        "code": "SC-GYB-TEE",
+                        "price": 2500,
+                        "image": "sc-11.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "ppp cosmetics bag",
+                        "code": "SC-PPP-CBAG",
+                        "price": 1600,
+                        "image": "sc-12.png"
+                    }
+                ]
+            },
+            {
+                "artist": "grentperez",
+                "logo": "gp-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "backflips hoodie",
+                        "code": "GP-BF-HDIE",
+                        "price": 3325,
+                        "image": "gp-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "black backflips longsleeve tee",
+                        "code": "GP-BF-BLKLS",
+                        "price": 2625,
+                        "image": "gp-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "blue backflips tee",
+                        "code": "GP-BF-BLUETEE",
+                        "price": 1750,
+                        "image": "gp-3.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "pink cheeseburger tee",
+                        "code": "GP-PC-TEE",
+                        "price": 1750,
+                        "image": "gp-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "backflips shorts",
+                        "code": "GP-BF-SHORTS",
+                        "price": 3200,
+                        "image": "gp-5.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "backflips in a restaurant cd",
+                        "code": "GP-BF-CD",
+                        "price": 700,
+                        "image": "gp-6.png"
+                    }
+                ]
+            },
+            {
+                "artist": "TWICE",
+                "logo": "tw-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "strategy tumbler",
+                        "code": "TW-STR-TMBLR",
+                        "price": 1941,
+                        "image": "tw-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "strategy vinyl",
+                        "code": "TW-STR-VINYL",
+                        "price": 1664,
+                        "image": "tw-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "zone keychain",
+                        "code": "TW-ZONE-KCHN",
+                        "price": 333,
+                        "image": "tw-3.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "zone acrylic standee",
+                        "code": "TW-ZONE-ACSTND",
+                        "price": 333,
+                        "image": "tw-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "im nayeon I'M ver",
+                        "code": "TW-NY-IM",
+                        "price": 1553,
+                        "image": "tw-5.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "im nayeon NA ver",
+                        "code": "TW-NY-NA",
+                        "price": 1553,
+                        "image": "tw-6.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "im nayeon POP ver",
+                        "code": "TW-NY-POP",
+                        "price": 1553,
+                        "image": "tw-7.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "with you-th vinyl",
+                        "code": "TW-WY-VINYL",
+                        "price": 1497,
+                        "image": "tw-8.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "ready to be vinyl",
+                        "code": "TW-RTB-VINYL",
+                        "price": 1664,
+                        "image": "tw-9.png"
+                    }
+                ]
+            },
+            {
+                "artist": "Lorde",
+                "logo": "lrd-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "virgin standard lp",
+                        "code": "LRD-VG-LP",
+                        "price": 1830,
+                        "image": "lrd-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "mystic hat",
+                        "code": "LRD-MYST-HAT",
+                        "price": 2219,
+                        "image": "lrd-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "archetypal baby tee blue",
+                        "code": "LRD-ARC-BTBLU",
+                        "price": 2219,
+                        "image": "lrd-3.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "virgin t-shirt black",
+                        "code": "LRD-VG-TSBLK",
+                        "price": 2496,
+                        "image": "lrd-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "virgin t-shirt white",
+                        "code": "LRD-VG-TSWHT",
+                        "price": 2496,
+                        "image": "lrd-5.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "virgin long sleeve",
+                        "code": "LRD-VG-LS",
+                        "price": 3328,
+                        "image": "lrd-6.png"
+                    }
+                ]
+            },
+            {
+                "artist": "Billie Eilish",
+                "logo": "be-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "hit me hard and soft red tee",
+                        "code": "BE-HMHAS-RTEE",
+                        "price": 2774,
+                        "image": "be-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "billie x lost love flannel",
+                        "code": "BE-BXLL-FLNL",
+                        "price": 5547,
+                        "image": "be-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "billie x lost love red crewneck",
+                        "code": "BE-BXLL-RCNK",
+                        "price": 4992,
+                        "image": "be-3.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "all over billie tank",
+                        "code": "BE-AO-BTANK",
+                        "price": 2496,
+                        "image": "be-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "i'll volunteer tee",
+                        "code": "BE-VOL-TEE",
+                        "price": 2496,
+                        "image": "be-5.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "hit me hard and soft vinyl",
+                        "code": "BE-HMHAS-VINYL",
+                        "price": 1830,
+                        "image": "be-6.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "hit me hard and soft cassette",
+                        "code": "BE-HMHAS-CAS",
+                        "price": 998,
+                        "image": "be-7.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "hit me hard & soft cover tee",
+                        "code": "BE-HMHAS-WHTEE",
+                        "price": 2496,
+                        "image": "be-8.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "all over cover t-shirt",
+                        "code": "BE-AOC-TSHRT",
+                        "price": 2496,
+                        "image": "be-9.png"
+                    }
+                ]
+            }, {
+                "artist": "SZA",
+                "logo": "sz-logo.png",
+                "products": [
+                    {
+                        "isAvailable": true,
+                        "name": "sza lana tote",
+                        "code": "SZ-LANA-TOTE",
+                        "price": 2219,
+                        "image": "sz-1.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sos deluxe 4lp",
+                        "code": "SZ-SOS-4LP",
+                        "price": 4438,
+                        "image": "sz-2.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sza sos crewneck",
+                        "code": "SZ-SOS-CREW",
+                        "price": 4160,
+                        "image": "sz-3.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sza signature sos jersey",
+                        "code": "SZ-SIG-JRSY",
+                        "price": 4382,
+                        "image": "sz-4.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sza lana distressed hat",
+                        "code": "SZ-LANA-HAT",
+                        "price": 1941,
+                        "image": "sz-5.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sza lana beetle ringer tee",
+                        "code": "SZ-LANA-BRTLTEE",
+                        "price": 3051,
+                        "image": "sz-6.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sza natural tote bag",
+                        "code": "SZ-NTRL-TOTE",
+                        "price": 1941,
+                        "image": "sz-7.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "sza kill bill tour white tee",
+                        "code": "SZ-KB-WHTEE",
+                        "price": 3051,
+                        "image": "sz-8.png"
+                    },
+                    {
+                        "isAvailable": true,
+                        "name": "i did it all for love hoodie",
+                        "code": "SZ-LOVE-HOOD",
+                        "price": 4937,
+                        "image": "sz-9.png"
+                    }
+                ]
+            },
+
+        ]
+
+        var total = 0;
+
+        function loadartists() {
+            var artistsContainer = document.getElementById("artists");
+
+            products.forEach((product, index) => {
+                artistsContainer.innerHTML += `
+          <div onclick="loadProducts('`+ index + `')" class="card mx-1 custom-button px-3 text-center artist-card" style=background-color:white;>
+            <img src="images/`+ product.logo + `" alt="Logo" style="width:auto; height:60px;">
+          </div>
+        `;
+            });
+        }
+
+        function loadProducts(artistIndex) {
+            var maincontainer = document.getElementById("maincontainer");
+            maincontainer.innerHTML = "";
+
+
+            products[artistIndex].products.forEach(content => {
+                maincontainer.innerHTML += `
+            <div onclick="addToReceipt('`+ content.price + `','` + content.code + `')" class="card m-2 mt-3 custom-button content rounded-4" style="width: 18rem; border: 1px solid rgb(95, 95, 95);">
+              <img src="images/`+ content.image + `" class="card-img-top">
+              <div class="card-body">
+                <p class="card-text" style="margin-bottom:0px; font-family:Inter Medium;">`+ content.name + `</p>
+                 <p class="card-text"style="font-family:Inter Bold;font-size:30px;">₱` + parseFloat(content.price).toLocaleString() + `</p>
+                </div>
+            </div>
+          `;
+            });
+        }
+
+
+
+        function addToReceipt(price, code) {
+            var receiptContainer = document.getElementById("receipt");
+            total = parseFloat(total) + parseFloat(price);
+
+            totalValueElement = document.getElementById("totalValue");
+            totalValueElement.innerHTML = parseFloat(total).toLocaleString();
+
+            receiptContainer.innerHTML += `
+        <div class="d-flex flex-row justify-content-between">
+          <div><small>`+ code + `</small></div>
+          <div><small>₱`+ parseFloat(price).toLocaleString() + `</small></div>
+        </div>
+      `;
+        }
+
+        loadartists();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
