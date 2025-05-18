@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Merch Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <style>
+        body {
+            background-color: #efefef;
+        }
+
+        @font-face {
+            font-family: 'Inter Medium';
+            src: url('../../fonts/Inter_18pt-Medium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Inter Bold';
+            src: url('../../fonts/Inter_18pt-Bold.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .custom-button {
+            width: fit-content;
+            border-radius: 100px;
+            border: 1px solid rgb(95, 95, 95);
+        }
+
+        .custom-button.content {
+            width: 200px;
+        }
+
+
+        .custom-button:hover {
+            background-color: rgb(240, 240, 240);
+            cursor: pointer;
+        }
+
+        .artist-card:hover {
+            background-color: #efefef !important;
+            cursor: pointer;
+        }
+
+
+        .artists {
+            width: fit-content;
+        }
+
+        .topcontainer {
+            height: 15dvh;
+            background-color: #818e9d;
+            border: 1px solid rgb(95, 95, 95);
+            overflow-y: hidden !important;
+            border-radius: 105px;
+        }
+
+        .maincontainer {
+            height: 58dvh;
+        }
+
+        .topcontainer::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        .form-control {
+            font-family: 'Inter Medium', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .form-control::placeholder {
+            font-family: 'Inter Medium', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(95, 95, 95);
+            border-radius: 5px;
+            transition: background-color 0.9s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(95, 95, 95);
+        }
+
+        @media (max-width: 768px) {
+            .search-box {
+                width: 250px !important;
+            }
+
+            .form-control {
+                width: 250px !important;
+            }
+
+            .logo-col {
+                margin: auto;
+            }
+
+            .products-card {
+                display: flex;
+                justify-content: center !important;
+            }
+
+            .topcontainer {
+                height: 15dvh;
+            }
+
+            .receipt-card {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .maincontainer {
+                overflow-x: hidden !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row pt-3">
+            <div class="col-12 col-md-9">
+
+                <!-- FOR LOGO AND SEARCH -->
+                <div class="row">
+                    <!-- LOGO COLUMN -->
+                    <div class="logo-col col-auto">
+                        <img src="images/merch-shop-logo.png" alt="Logo"
+                            style="width: 200px; height: auto; padding: 20px;">
+                    </div>
+                    <!-- SEARCH COLUMN -->
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <div class="search-box input-group mb-3"
+                            style="width: 500px; border: 1px solid rgb(95, 95, 95); border-radius: 5px; background-color: white;">
+                            <span class="input-group-text mx-2" id="basic-addon1"
+                                style="background-color: transparent; border: none;">
+                                <i class="bi bi-search"></i>
+                                <input type="text" class="form-control" placeholder="Search across all artists"
+                                    aria-label="search" aria-describedby="basic-addon1"
+                                    style="background-color: transparent; border: none; width: 450px;">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- FOR ARTISTS -->
+                <div class="row">
+                    <div class="col pb-3">
+                        <div class="card overflow-scroll p-3 topcontainer">
+                            <div class="d-flex flex-start flex-row artists my-auto" id="artists">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOR PRODUCTS -->
+                <div class="row">
+                    <div class="col">
+                        <div class="card overflow-scroll p-3 maincontainer">
+                            <div class="products-card px-2 d-flex flex-row flex-wrap justify-content-start m-0 m-auto"
+                                id="maincontainer">
+                                <div class="text-muted w-100 text-center mt-5"
+                                    style=" font-family: 'Inter Medium', sans-serif; letter-spacing: -0.5px;">
+                                    <p style="font-size: 18px;">Select an artist to start shopping from their
+                                        merchandise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOR RECEIPT -->
+            <div class="receipt-card col-12 col-md-3">
+                <div class="card p-3 overflow-scroll"
+                    style="height: 100%; background-color:#818e9d; border: 1px solid rgb(95, 95, 95); color:white; overflow-x: hidden !important; font-family: Inter Medium; ">
+                    <div class="text-center"
+                        style="border-bottom: 1px dashed rgb(255, 255, 255); border-top: 1px dashed rgb(255, 255, 255);">
+                        <p class="mt-3" style="font-size: 25px;">
+                            <strong>
+                                ORDER SUMMARY
+                            </strong>
+                        <p>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between"
+                        style="border-bottom: 1px dashed rgb(255, 255, 255); height: 25px;">
+                        <p>
+                            ITEM
+                        </p>
+                        <p>
+                            PRICE
+                        </p>
+                    </div>
+                    <div id="receipt"
+                        style="max-height: 332px; overflow: scroll; overflow-x: hidden !important; margin-right: -10px;">
+
+                    </div>
+                    <div class="mt-4 py-4 rounded-4 px-2 text-center"
+                        style="background-color: #afb8c1; border: 1px dashed rgb(255, 255, 255);">
+                        <div>GRAND TOTAL</div>
+                        <div style="font-size: 30px; margin-top: -5px;">₱<b id="totalValue">0</b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var artists = [];
+        var products = [];
+
+        const getAllArtists = async () => {
+            fetch(
+                'http://localhost/christianjamss.github.io/ADET/A06/A06_BE/artists.php'
+            )
+                .then(response => response.json())
+                .then(data => {
+                    artists = data;
+                    loadArtists();
+                });
+        }
+
+        const getAllProducts = async (artistID) => {
+            const categoryData = {
+                artistID: artistID
+            };
+
+
+            fetch(
+                'http://localhost/christianjamss.github.io/ADET/A06/A06_BE/products.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(categoryData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    products = data;
+                    loadProducts();
+                });
+        }
+
+        getAllArtists();
+
+
+        var total = 0;
+
+        function loadArtists(artistID) {
+            var artistsContainer = document.getElementById("artists");
+
+            artists.forEach((artist) => {
+                artistsContainer.innerHTML += `
+          <div onclick="getAllProducts('`+ artist.artistID + `')" class="card mx-1 custom-button px-3 text-center artist-card" style=background-color:white;>
+            <img src="images/`+ artist.logo + `" alt="Logo" style="width:auto; height:60px;">
+          </div>
+        `;
+            });
+        }
+
+        function loadProducts(artistID) {
+            var maincontainer = document.getElementById("maincontainer");
+            maincontainer.innerHTML = "";
+
+
+            products.forEach(product => {
+                maincontainer.innerHTML += `
+            <div onclick="addToReceipt('`+ product.price + `','` + product.code + `')" class="card m-2 mt-3 custom-button content rounded-4" style="width: 18rem; border: 1px solid rgb(95, 95, 95);">
+              <img src="images/`+ product.image + `" class="card-img-top">
+              <div class="card-body">
+                <p class="card-text" style="margin-bottom:0px; font-family:Inter Medium;">`+ product.name + `</p>
+                 <p class="card-text"style="font-family:Inter Bold;font-size:30px;">₱` + parseFloat(product.price).toLocaleString() + `</p>
+                </div>
+            </div>
+          `;
+            });
+        }
+
+
+
+        function addToReceipt(price, code) {
+            var receiptContainer = document.getElementById("receipt");
+            total = parseFloat(total) + parseFloat(price);
+
+            totalValueElement = document.getElementById("totalValue");
+            totalValueElement.innerHTML = parseFloat(total).toLocaleString();
+
+            receiptContainer.innerHTML += `
+        <div class="d-flex flex-row justify-content-between">
+          <div><small>`+ code + `</small></div>
+          <div><small>₱`+ parseFloat(price).toLocaleString() + `</small></div>
+        </div>
+      `;
+        }
+
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
