@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>christian james | graphics</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
     <link rel="icon" href="../img/icon.png" type="image/png">
     <style>
         @font-face {
@@ -21,6 +23,26 @@
             src: url('../fonts/Inter_18pt-Bold.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
+        }
+
+        .interest {
+            background-color: transparent;
+            border: 1px solid #1d1d1d;
+            border-radius: 0px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #1d1d1d;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-family: Inter Medium, sans-serif;
+            cursor: pointer;
+            letter-spacing: -1px;
+        }
+
+        .interest:hover,
+        .interest.active {
+            background-color: #1d1d1d;
+            color: #f8f7f3;
         }
 
         .navbar-nav .nav-link {
@@ -45,7 +67,7 @@
             box-sizing: border-box;
         }
 
-        body{
+        body {
             display: grid;
             grid-template-rows: auto 1fr auto;
             min-height: 100vh;
@@ -82,23 +104,6 @@
             padding: 20px;
         }
 
-        .interest {
-            background-color: transparent;
-            border: 2px solid #f8f7f3;
-            border-radius: 50px;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #f8f7f3;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-family: Inter;
-        }
-
-        .interest:hover {
-            background-color: #f8f7f3;
-            color: #000;
-        }
-
         .img-brand {
             margin-top: 0px;
         }
@@ -119,14 +124,6 @@
 
             }
 
-            .interest-h1 {
-                font-size: 20px;
-            }
-
-            .interest {
-                font-size: 12px;
-            }
-
             .img-brand {
                 margin-top: -50px;
             }
@@ -145,12 +142,11 @@
         }
 
         .project {
-            background-color: #e9e8e3;
             padding: 20px;
-            border: 1px solid #333;
-            border-radius: 8px;
+            letter-spacing: -0.5px;
+            border-radius: 0px;
             transition: transform 0.3s;
-            font-family: Inter, sans-serif;
+            font-family: Inter Medium, sans-serif;
             color: #1d1d1d;
             line-height: 1.5;
             font-size: 15px;
@@ -158,7 +154,7 @@
 
         .project img {
             max-width: 100%;
-            border-radius: 8px;
+            border-radius: 0px;
             border: 1px solid #333;
         }
 
@@ -191,7 +187,7 @@
 
     <!-- NAVBAR -->
 
-  <nav class="navbar navbar-expand-lg position-fixed w-100"
+    <nav class="navbar navbar-expand-lg position-fixed w-100"
         style="top: 0; left: 0; z-index: 1030; background-color: #f8f7f3 !important; padding: 10px; border-bottom: 1px solid rgba(94, 76, 76, 0.3);">
         <div class="container-fluid px-0">
             <a class="navbar-brand" href="../index.html">
@@ -225,72 +221,588 @@
                 <h1 class="projects-h1" style="font-family: Inter Bold; ">
                     graphics
                 </h1>
-                <div class="project-grid" style="margin-bottom: 20px;">
-                    <div class="project">
-                        <a href="../act1/act1.html">
-                            <img src="../img/act1.png" alt="Project 1">
-                            <h3>Activity 1 : Baseus Feature</h3>
-                        </a>
-                        <p>Create a one-page HTML about any specific hardware device you want to showcase, like a gaming
-                            console, mobile phone, laptop, PC, monitor, TV, etc.
-                        </p>
+                <!-- Portfolio Section -->
+                <section id="portfolio">
+                    <div class="container">
+
+                        <!-- Filters -->
+                        <div class="mb-4 d-flex flex-wrap gap-2 justify-content-center">
+                            <button class="interest active" data-filter="*">all</button>
+                            <button class="interest" data-filter=".posters">posters</button>
+                            <button class="interest" data-filter=".typography">typography</button>
+                            <button class="interest" data-filter=".pubmats">pubmats</button>
+                            <button class="interest" data-filter=".merch">merch</button>
+                            <button class="interest" data-filter=".infographics">infographics</button>
+                            <button class="interest" data-filter=".videography">videography</button>
+                            <button class="interest" data-filter=".others">others</button>
+
+                        </div>
+
+                        <!-- Portfolio Grid -->
+                        <div class="row g-4">
+
+                            <!-- Posters -->
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-1.png" class="glightbox">
+                                        <img src="../img/graphics/design-1.png" alt="Design 1">
+                                        <h3>SEULGI</h3>
+                                        <p style="line-height:1px;">accidentally on purpose</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-2.png" class="glightbox">
+                                        <img src="../img/graphics/design-2.png" alt="Design 2">
+                                        <h3>GRENTPEREZ</h3>
+                                        <p style="line-height:1px;">backflips in a restaurant</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-3.png" class="glightbox">
+                                        <img src="../img/graphics/design-3.png" alt="Design 3">
+                                        <h3>ARIANA GRANDE</h3>
+                                        <p style="line-height:1px;">eternal sunshine</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-17.png" class="glightbox">
+                                        <img src="../img/graphics/design-17.png" alt="Design 17">
+                                        <h3>MAKI & MALOI</h3>
+                                        <p style="line-height:1px;">abelyana</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-4.png" class="glightbox">
+                                        <img src="../img/graphics/design-4.png" alt="Design 4">
+                                        <h3>ROSÉ & BRUNO MARS</h3>
+                                        <p style="line-height:1px;">just meet me at the.. apt</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-5.png" class="glightbox">
+                                        <img src="../img/graphics/design-5.png" alt="Design 5">
+                                        <h3>KAZUHA</h3>
+                                        <p style="line-height:1px;">odd fairy floss</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-39.png" class="glightbox">
+                                        <img src="../img/graphics/design-39.png" alt="Design 30">
+                                        <h3>KAZUHA</h3>
+                                        <p style="line-height:1px;">zuha brat</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-6.png" class="glightbox">
+                                        <img src="../img/graphics/design-6.png" alt="Design 6">
+                                        <h3>GAGA & MARS</h3>
+                                        <p style="line-height:1px;">die with a smile</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-7.png" class="glightbox">
+                                        <img src="../img/graphics/design-7.png" alt="Design 7">
+                                        <h3>CHAEWON</h3>
+                                        <p style="line-height:1px;">crazyyy</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-37.png" class="glightbox">
+                                        <img src="../img/graphics/design-37.png" alt="Design 30">
+                                        <h3>CHAEWON</h3>
+                                        <p style="line-height:1px;">crazyyyyyy</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-38.png" class="glightbox">
+                                        <img src="../img/graphics/design-38.png" alt="Design 30">
+                                        <h3>CHAEWON</h3>
+                                        <p style="line-height:1px;">crazyyyyyyyy</p>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-8.png" class="glightbox">
+                                        <img src="../img/graphics/design-8.png" alt="Design 8">
+                                        <h3>WENDY</h3>
+                                        <p style="line-height:1px;">chill kill</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-9.png" class="glightbox">
+                                        <img src="../img/graphics/design-9.png" alt="Design 9">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">fancy</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-10.png" class="glightbox">
+                                        <img src="../img/graphics/design-10.png" alt="Design 10">
+                                        <h3>ALAMAT</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-11.png" class="glightbox">
+                                        <img src="../img/graphics/design-11.png" alt="Design 11">
+                                        <h3>TOMAS</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-12.png" class="glightbox">
+                                        <img src="../img/graphics/design-12.png" alt="Design 12">
+                                        <h3>MO</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-13.png" class="glightbox">
+                                        <img src="../img/graphics/design-13.png" alt="Design 13">
+                                        <h3>TANEO</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-14.png" class="glightbox">
+                                        <img src="../img/graphics/design-14.png" alt="Design 14">
+                                        <h3>JAO</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-15.png" class="glightbox">
+                                        <img src="../img/graphics/design-15.png" alt="Design 15">
+                                        <h3>RJI</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-16.png" class="glightbox">
+                                        <img src="../img/graphics/design-16.png" alt="Design 16">
+                                        <h3>ALAS</h3>
+                                        <p style="line-height:1px;">luzviminda</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-18.png" class="glightbox">
+                                        <img src="../img/graphics/design-18.png" alt="Design 17">
+                                        <h3>LORDE</h3>
+                                        <p style="line-height:1px;">what was that?</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-22.png" class="glightbox">
+                                        <img src="../img/graphics/design-22.png" alt="Design 22">
+                                        <h3>SAEROM</h3>
+                                        <p style="line-height:1px;">supersonic <i>unreleased</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-20.png" class="glightbox">
+                                        <img src="../img/graphics/design-20.png" alt="Design 20">
+                                        <h3>TZUYU</h3>
+                                        <p style="line-height:1px;">aboutzu <i>unreleased</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-19.png" class="glightbox">
+                                        <img src="../img/graphics/design-19.png" alt="Design 19">
+                                        <h3>WENDY</h3>
+                                        <p style="line-height:1px;">birthday</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-21.png" class="glightbox">
+                                        <img src="../img/graphics/design-21.png" alt="Design 21">
+                                        <h3>SEULGI</h3>
+                                        <p style="line-height:1px;">birthday</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-23.png" class="glightbox">
+                                        <img src="../img/graphics/design-23.png" alt="Design 23">
+                                        <h3>THE BOYZ</h3>
+                                        <p style="line-height:1px;">maverick</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-44.png" class="glightbox">
+                                        <img src="../img/graphics/design-44.png" alt="Design 27">
+                                        <h3>NINGNING</h3>
+                                        <p style="line-height:1px;">supernova #1</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-45.png" class="glightbox">
+                                        <img src="../img/graphics/design-45.png" alt="Design 28">
+                                        <h3>NINGNING</h3>
+                                        <p style="line-height:1px;">supernova #2</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-46.png" class="glightbox">
+                                        <img src="../img/graphics/design-46.png" alt="Design 29">
+                                        <h3>NINGNING</h3>
+                                        <p style="line-height:1px;">supernova #3</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-42.png" class="glightbox">
+                                        <img src="../img/graphics/design-42.png" alt="Design 30">
+                                        <h3>YUNJIN</h3>
+                                        <p style="line-height:1px;">yunjin as love dive</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-40.png" class="glightbox">
+                                        <img src="../img/graphics/design-40.png" alt="Design 30">
+                                        <h3>SAKURA</h3>
+                                        <p style="line-height:1px;">sakura as maverick #1</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-41.png" class="glightbox">
+                                        <img src="../img/graphics/design-41.png" alt="Design 30">
+                                        <h3>SAKURA</h3>
+                                        <p style="line-height:1px;">sakura as maverick #2</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters pubmats" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-24.png" class="glightbox">
+                                        <img src="../img/graphics/design-24.png" alt="Design 24">
+                                        <h3>COMSOC 2023</h3>
+                                        <p style="line-height:1px;">general assembly poster</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-26.jpg" class="glightbox">
+                                        <img src="../img/graphics/design-26.jpg" alt="Design 26">
+                                        <h3>OPPENHEIMER</h3>
+                                        <p style="line-height:1px;">movie poster <i>uni project</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters pubmats" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-25.png" class="glightbox">
+                                        <img src="../img/graphics/design-25.png" alt="Design 25">
+                                        <h3>COMSOC 2025</h3>
+                                        <p style="line-height:1px;">comsoc night poster</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters pubmats" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-43.png" class="glightbox">
+                                        <img src="../img/graphics/design-43.png" alt="Design 25">
+                                        <h3>CINEMAFEST</h3>
+                                        <p style="line-height:1px;">unused cinemafest poster</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-47.png" class="glightbox">
+                                        <img src="../img/graphics/design-47.png" alt="Design 25">
+                                        <h3>THE PLATFORMS</h3>
+                                        <p style="line-height:1px;">magazine cover <i>uni project</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 infographics" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/design-48.png" class="glightbox">
+                                        <img src="../img/graphics/design-48.png" alt="Design 25">
+                                        <h3>GOOGLE CLOUD</h3>
+                                        <p style="line-height:1px;">google cloud platform <i>uni project</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 infographics" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/56.png" class="glightbox">
+                                        <img src="../img/graphics/56.png" alt="Design 25">
+                                        <h3>BYAHENG ISKO</h3>
+                                        <p style="line-height:1px;">retro infographic <i>uni project</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 posters" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/55.png" class="glightbox">
+                                        <img src="../img/graphics/55.png" alt="Design 25">
+                                        <h3>TO BE OR NOT TO BE</h3>
+                                        <p style="line-height:1px;">that is the question! <i>uni project</i></p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Videos -->
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 videography" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="https://youtu.be/IAz8YSfnSWc?si=bTglvFPSP0yOqAZ0">
+                                        <img src="../img/graphics/design-31.jpg" alt="Design 1">
+                                        <h3>PUPPET/AI <i>2025</i></h3>
+                                        <p style="line-height:1px;">director, editor</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 videography" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="https://youtu.be/emOi02apKng?si=feEMiwyOqBdPcVp6">
+                                        <img src="../img/graphics/design-32.png" alt="Design 1">
+                                        <h3>SIKLO <i>2023</i></h3>
+                                        <p style="line-height:1px;">co-director, editor</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 videography" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="https://youtu.be/UB62k85u2sA?si=L1jcQwnXzJ0J1VwD">
+                                        <img src="../img/graphics/design-33.jpg" alt="Design 1">
+                                        <h3>LIWANAG SA LIKOD NG DILIM <i>2022</i></h3>
+                                        <p style="line-height:1px;">editor</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 videography" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="https://youtu.be/QThwR09BSGo?si=Bo41Ga7BORFxqoxz">
+                                        <img src="../img/graphics/design-34.png" alt="Design 1">
+                                        <h3>EL FILIBUSTERISMO <i>2020</i></h3>
+                                        <p style="line-height:1px;">editor</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 videography" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="https://youtu.be/-j2P9bmFRGQ?si=H_PLlBW41Z739UYy">
+                                        <img src="../img/graphics/design-35.png" alt="Design 1">
+                                        <h3>BARBARA <i>2020</i></h3>
+                                        <p style="line-height:1px;">director, editor</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 videography" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="https://youtu.be/8qbDdOTYNhc?si=nsZQaKU4Rf8zsJUJ">
+                                        <img src="../img/graphics/design-36.png" alt="Design 1">
+                                        <h3>MULAT <i>2019</i></h3>
+                                        <p style="line-height:1px;">editor</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Others -->
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/49.png" class="glightbox">
+                                        <img src="../img/graphics/49.png" alt="Design 25">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">moonlight sunrise redesigned</p>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/50.png" class="glightbox">
+                                        <img src="../img/graphics/50.png" alt="Design 25">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">moonlight sunrise redesigned</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/51.png" class="glightbox">
+                                        <img src="../img/graphics/51.png" alt="Design 25">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">moonlight sunrise redesigned</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/52.png" class="glightbox">
+                                        <img src="../img/graphics/52.png" alt="Design 25">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">moonlight sunrise redesigned</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/53.png" class="glightbox">
+                                        <img src="../img/graphics/53.png" alt="Design 25">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">moonlight sunrise redesigned</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/54.png" class="glightbox">
+                                        <img src="../img/graphics/54.png" alt="Design 25">
+                                        <h3>TWICE</h3>
+                                        <p style="line-height:1px;">moonlight sunrise redesigned</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/57.png" class="glightbox">
+                                        <img src="../img/graphics/57.png" alt="Design 25">
+                                        <h3>LE SSERAFIM</h3>
+                                        <p style="line-height:1px;">burn the bridge title card</p>
+                                    </a>
+                                </div>
+                            </div>
+
+                             <div class="col-12 col-md-6 col-lg-4 col-xl-3 others" data-aos="fade-up">
+                                <div class="project">
+                                    <a href="../img/graphics/58.png" class="glightbox">
+                                        <img src="../img/graphics/58.png" alt="Design 25">
+                                        <h3>LE SSERAFIM</h3>
+                                        <p style="line-height:1px;">burn the bridge title card</p>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="project">
-                        <a href="../act2/index.html">
-                            <img src="../img/act2.png" alt="Project 2">
-                            <h3>Activity 2: Enchanted Kingdom</h3>
-                        </a>
-                        <p>Create an HTML website about a place in the world you would like to showcase.
-                            This may be one or multi-paged.</p>
-                    </div>
-                    <div class="project">
-                        <a href="../act3/index.html">
-                            <img src="../img/act3.jpg" alt="Project 3">
-                            <h3>Activity 3: Ariana Grande Eras</h3>
-                        </a>
-                        <p>Create an HTML website that contains some form of gallery. It can be about anything.</p>
-                    </div>
-                    <div class="project">
-                        <a href="../act4/index.html">
-                            <img src="../img/act4.png" alt="Project 4">
-                            <h3>Activity 4: aespa</h3>
-                        </a>
-                        <p>Create an HTML website that utilizes a free public API with JSON return. It can be about
-                            anything. It can have one or more pages.</p>
-                    </div>
-                    <div class="project">
-                        <a href="../act5/index.html">
-                            <img src="../img/act5.png" alt="Project 4">
-                            <h3>Activity 5: Short n' Sweet</h3>
-                        </a>
-                        <p>Create a new page with a video feature. This can be local or from the internet. Populate the
-                            page with relevant information. You can add as many videos as you want. You may apply other
-                            media as well.
-                        </p>
-                    </div>
-                    <div class="project">
-                        <a href="../act6/index.html">
-                            <img src="../img/act6.png" alt="Project 4">
-                            <h3>Activity 6: Drama</h3>
-                        </a>
-                        <p>Create an HTML site that implements the parallax design. The site can be about anything that
-                            you like to showcase. It can be a personal site, a game you enjoy, a gadget you love, or
-                            anything else.
-                        </p>
-                    </div>
-                </div>
+                </section>
             </div>
 
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 james. Web Development Portfolio.</p>
+        <p>&copy; 2026 james. portfolio.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <script>
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -303,8 +815,54 @@
             });
         });
     </script>
+    <script>
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const portfolioItems = document.querySelectorAll('.row > div');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === '*' || item.classList.contains(filter.slice(1))) {
+                        item.classList.remove('d-none');
+                        item.classList.add('d-block');
+                    } else {
+                        item.classList.add('d-none');
+                        item.classList.remove('d-block');
+                    }
+                });
+
+                // Refresh AOS so newly shown elements animate
+                AOS.refresh();
+            });
+        });
+    </script>
+
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 600,
+            easing: 'ease-in-out',
+            once: true, // animate only once when entering viewport
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox',  // any link with this class will open in popup
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+        });
+    </script>
 
 </body>
+
 
 
 
