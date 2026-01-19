@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>christian james | appdev</title>
+    <title>christian james | web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="../img/icon.png" type="image/png">
@@ -145,12 +145,11 @@
         }
 
         .project {
-            background-color: #e9e8e3;
             padding: 20px;
-            border: 1px solid #333;
-            border-radius: 8px;
+            letter-spacing: -0.5px;
+            border-radius: 0px;
             transition: transform 0.3s;
-            font-family: Inter, sans-serif;
+            font-family: Inter Medium, sans-serif;
             color: #1d1d1d;
             line-height: 1.5;
             font-size: 15px;
@@ -158,7 +157,7 @@
 
         .project img {
             max-width: 100%;
-            border-radius: 8px;
+            border-radius: 0px;
             border: 1px solid #333;
         }
 
@@ -191,9 +190,9 @@
 
     <!-- NAVBAR -->
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary"
-        style="border: 3px solid rgba(94, 76, 76, 0); position: relative; padding: 10px; background-color: #f8f7f3;">
-        <div class="container-fluid" style="border: 1px solid rgba(0, 0, 0, 0.452);padding: 10px;">
+    <nav class="navbar navbar-expand-lg position-fixed w-100"
+        style="top: 0; left: 0; z-index: 1030; background-color: #f8f7f3 !important; padding: 10px; border-bottom: 1px solid rgba(94, 76, 76, 0.3);">
+        <div class="container-fluid px-0">
             <a class="navbar-brand" href="../index.html">
                 <img src="../img/logo.png" alt="Logo" width="auto" height="60" class="d-inline-block align-text-top">
             </a>
@@ -208,10 +207,10 @@
                         <a class="nav-link " id="nav1" href="../index.html">back to home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="nav1" href="webdev.html">webdev projects</a>
+                        <a class="nav-link" id="nav1" href="graphics.html">graphics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="nav1" href="#projects">appdev projects</a>
+                        <a class="nav-link active" id="nav1" href="#projects">web</a>
                     </li>
                 </ul>
             </div>
@@ -220,26 +219,69 @@
 
     <section id="projects">
         <div class="container-fluid"
-            style="background-color: #f8f7f3; margin: 0; padding: 0px; justify-content: center; ">
+            style="background-color: #f8f7f3; margin: 0; padding: 0px; padding-top:100px; justify-content: center; ">
             <div class="px-5" style=" padding-bottom: 70px;">
                 <h1 class="projects-h1" style="font-family: Inter Bold; ">
-                    appdev projects
+                    web projects
                 </h1>
 
                 <div class="project-grid" style="margin-bottom: 20px;">
                     <div class="project">
-                        <a href="../ADET\A02\index.php">
-                            <img src="../img/dd-cover.png" alt="Project 1">
-                            <h3>Activity 1 : ⋆｡˚⋆ฺ digicam diaries ⋆｡˚⋆ฺ</h3>
+                        <a href="../act1/act1.html">
+                            <img src="../img/act1.png" alt="Project 1">
+                            <h3>baseus.html</h3>
                         </a>
-                        <p>Create a one-index PHP website utilizing the MVC architecture. Create at least three content
-                            pages. The content pages must switch via a URL GET variable.
+                        <p>Create a one-page HTML about any specific hardware device you want to showcase, like a gaming
+                            console, mobile phone, laptop, PC, monitor, TV, etc.
+                        </p>
+                    </div>
+                    <div class="project">
+                        <a href="../act2/index.html">
+                            <img src="../img/act2.png" alt="Project 2">
+                            <h3>enchanted_kingdom.html</h3>
+                        </a>
+                        <p>Create an HTML website about a place in the world you would like to showcase.
+                            This may be one or multi-paged.</p>
+                    </div>
+                    <div class="project">
+                        <a href="../act3/index.html">
+                            <img src="../img/act3.jpg" alt="Project 3">
+                            <h3>ari_eras.html</h3>
+                        </a>
+                        <p>Create an HTML website that contains some form of gallery. It can be about anything.</p>
+                    </div>
+                    <div class="project">
+                        <a href="../act4/index.html">
+                            <img src="../img/act4.png" alt="Project 4">
+                            <h3>aespa.html</h3>
+                        </a>
+                        <p>Create an HTML website that utilizes a free public API with JSON return. It can be about
+                            anything. It can have one or more pages.</p>
+                    </div>
+                    <div class="project">
+                        <a href="../act5/index.html">
+                            <img src="../img/act5.png" alt="Project 4">
+                            <h3>short_n_sweet.html</h3>
+                        </a>
+                        <p>Create a new page with a video feature. This can be local or from the internet. Populate the
+                            page with relevant information. You can add as many videos as you want. You may apply other
+                            media as well.
+                        </p>
+                    </div>
+                    <div class="project">
+                        <a href="../act6/index.html">
+                            <img src="../img/act6.png" alt="Project 4">
+                            <h3>drama.html</h3>
+                        </a>
+                        <p>Create an HTML site that implements the parallax design. The site can be about anything that
+                            you like to showcase. It can be a personal site, a game you enjoy, a gadget you love, or
+                            anything else.
                         </p>
                     </div>
                     <div class="project">
                         <a href="../ADET\A03\index.html">
                             <img src="../img/adet-a03-cover.png" alt="Project 2">
-                            <h3>Activity 2 : james’ world</h3>
+                            <h3>james_world.html</h3>
                         </a>
                         <p>Create a website. Create at least three separate pages. At least one page must apply the
                             bento layout.
@@ -248,7 +290,7 @@
                     <div class="project">
                         <a href="../ADET\A04\index.html">
                             <img src="../img/adet-a04-cover.png" alt="Project 3">
-                            <h3>Activity 3 : Merch Shop</h3>
+                            <h3>merch_shop.html</h3>
                         </a>
                         <p>Front-end only. Create a purely one-page POS System web application. The web pages must load
                             via JavaScript.
@@ -257,7 +299,7 @@
                     <div class="project">
                         <a href="../ADET\A07\index.html">
                             <img src="../img/adet-a07-cover.png" alt="Project 4">
-                            <h3>Activity 4 : watchlist widget</h3>
+                            <h3>watchlist_widget.html</h3>
                         </a>
                         <p>Create an embeddable site. Show the usage of the embedable site by creating a new site or
                             using an existing one. Front-end only
